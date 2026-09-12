@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCart Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-logo" onclick="showSection('home')">SkyCart</div>
+    
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search SkyCart" onkeyup="searchProducts()">
+      <button onclick="searchProducts()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="nav-cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count" id="cartCount">0</span>
+      <span style="margin-left: 10px;">Cart</span>
+    </div>
+  </header>
+
+  <div class="sub-nav">
+    <span onclick="openNavModal('All Categories')"><i class="fa-solid fa-bars"></i> All</span>
+    <span onclick="openNavModal('Today\'s Deals')">Today's Deals</span>
+    <span onclick="openNavModal('Customer Service')">Customer Service</span>
+    <span onclick="openNavModal('Registry')">Registry</span>
+    <span onclick="openNavModal('Gift Cards')">Gift Cards</span>
+    <span onclick="openNavModal('Sell')">Sell</span>
+    <span onclick="showSection('about')"><i class="fa-solid fa-circle-info"></i> About Us</span>
+  </div>
+
+  <main class="container">
+    <div id="homeSection">
+      <div class="hero-banner"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <div id="aboutSection" class="about-section hidden">
+      <h2>About SkyCart</h2>
+      <p>Welcome to <strong>SkyCart</strong>, your ultimate destination for online shopping! Inspired by modern e-commerce experiences, SkyCart offers a seamless platform to explore top-tier electronics, smart gadgets, daily essentials, and modern technology.</p>
+      
+      <h3>Our Mission</h3>
+      <p>Our goal is to provide high-quality products at competitive prices with a smooth and fast shopping experience for every user.</p>
+
+      <h3>Why Choose Us?</h3>
+      <ul>
+        <li><i class="fa-solid fa-check-circle"></i> Wide range of electronics & gadgets</li>
+        <li><i class="fa-solid fa-truck-fast"></i> Fast and reliable delivery</li>
+        <li><i class="fa-solid fa-shield-halved"></i> 100% secure payments</li>
+        <li><i class="fa-solid fa-headset"></i> 24/7 dedicated customer support</li>
+        <li><i class="fa-solid fa-tag"></i> Branded styles</li>
+        <li><i class="fa-solid fa-home"></i> Home Appliances</li>
+        <li><i class="fa-solid fa-gem"></i> Jewellery</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <div id="navModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeNavModal()">&times;</span>
+      <h3 id="modalTitle">Header</h3>
+      <p id="modalBody">Details loading...</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      Back to top
+    </div>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Get to Know Us</h4>
+        <a href="#" onclick="showSection('about')">About SkyCart</a>
+        <a href="#">Careers</a>
+        <a href="#">Press Releases</a>
+      </div>
+      <div class="footer-column">
+        <h4>Connect with Us</h4>
+        <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="footer-column">
+        <h4>Make Money with Us</h4>
+        <a href="#" onclick="openNavModal('Sell')">Sell on SkyCart</a>
+        <a href="#">Become an Affiliate</a>
+        <a href="#">Fulfillment by SkyCart</a>
+      </div>
+      <div class="footer-column">
+        <h4>Let Us Help You</h4>
+        <a href="#" onclick="openNavModal('Customer Service')">Customer Service</a>
+        <a href="#">100% Purchase Protection</a>
+        <a href="#">Help Center</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 SkyCart, All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
